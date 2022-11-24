@@ -50,8 +50,23 @@ namespace czechitasZoo.classes
 		private void SupplyFood()
 		{
 			Console.WriteLine("Feeding time!");
-			Feeder.Add(FoodType.GRASS, 20);
-			Feeder.Add(FoodType.MEAT, 40);
+			
+			if (Feeder.ContainsKey(FoodType.GRASS))
+			{
+				Feeder[FoodType.GRASS] += 20;
+			}
+			else
+			{
+				Feeder.Add(FoodType.GRASS, 20);
+			}
+			if (Feeder.ContainsKey(FoodType.MEAT))
+			{
+				Feeder[FoodType.MEAT] += 40;
+			}
+			else
+			{
+				Feeder.Add(FoodType.MEAT, 40);
+			}
 		}
 		//private void FeedAnimals()
 		//{

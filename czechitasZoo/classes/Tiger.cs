@@ -36,10 +36,10 @@ namespace czechitasZoo.classes
 
 		private void FeedOnAnimals()
 		{
-			var animalToEat =	MyZoo.Pen
+			Animal? animalToEat = MyZoo.Pen
 				.Where(a => a != this)
 				.Where(a => !MyZoo.eatenAnimals.Contains(a))
-				.First();
+				.FirstOrDefault();
 			if(animalToEat != null)
 			{
 				MyZoo.eatenAnimals.Add(animalToEat);
